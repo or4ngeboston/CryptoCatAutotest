@@ -1,0 +1,18 @@
+# Playwright authentication
+auth.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Reports
+allure-results/
+report.html
+results.xml
+
+# IDE
+.vscode/
+.idea/

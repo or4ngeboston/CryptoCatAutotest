@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        ADMIN_EMAIL = 'cryptocat@ssd.uz'
+        ADMIN_PASSWORD = 'oash5pai2uiF3lu'
+    }
+
     stages {
         stage('Build Image') {
             steps {
@@ -12,6 +17,8 @@ pipeline {
             steps {
                 bat '''
                 docker run --rm --ipc=host ^
+                -e ADMIN_EMAIL=%ADMIN_EMAIL% ^
+                -e ADMIN_PASSWORD=%ADMIN_PASSWORD% ^
                 -v "%WORKSPACE%":/workspace ^
                 -w /workspace ^
                 cryptocat-test ^

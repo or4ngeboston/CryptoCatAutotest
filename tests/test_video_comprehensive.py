@@ -2,6 +2,8 @@ import os
 from dotenv import load_dotenv
 from playwright.sync_api import Page, expect
 import time
+import tempfile
+import re
 
 # Load environment variables
 load_dotenv()
@@ -36,8 +38,6 @@ def test_add_video_comprehensive(auth_page: Page):
     print(f"[OK] Filled title: {test_video_title}")
     
     # 5. Create and upload a dummy video file
-    import tempfile
-    
     temp_dir = tempfile.gettempdir()
     test_video_path = os.path.join(temp_dir, f"test_video_{timestamp}.mp4")
     
@@ -115,7 +115,6 @@ def test_add_video_comprehensive(auth_page: Page):
         print("[INFO] 'Created' notification not found, proceeding with URL check.")
     
     # Check if we were redirected to the edit page
-    import re
     expect(auth_page).to_have_url(re.compile(r".*/admin/videos/\d+/edit"), timeout=10000)
     print(f"[OK] Redirected to edit page for video '{test_video_title}'")
     

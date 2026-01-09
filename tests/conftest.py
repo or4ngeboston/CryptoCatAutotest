@@ -16,7 +16,7 @@ def auth_storage(browser: Browser):
     login_page.login()
     
     # Save storage state
-    storage = auth_storage_file = "auth.json"
+    auth_storage_file = "auth.json"
     context.storage_state(path=auth_storage_file)
     context.close()
     return auth_storage_file

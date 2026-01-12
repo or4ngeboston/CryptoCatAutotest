@@ -14,7 +14,7 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 echo Generating Allure Report...
-call allure generate ./allure-results --clean -o ./allure-report
+call allure generate --single-file path/to/allure-results
 
 echo Combining to Single File...
 call allure-combine ./allure-report

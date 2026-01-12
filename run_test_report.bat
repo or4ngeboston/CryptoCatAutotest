@@ -20,5 +20,5 @@ echo Combining to Single File...
 call allure-combine ./allure-report
 
 echo.
-echo Report generated at: %CD%\allure-report\complete.html
+echo Report generated at: %CD%\allure-results\complete.html
 start allure-report\complete.html

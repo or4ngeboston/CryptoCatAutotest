@@ -1,0 +1,19 @@
+
+[STEP 1] Navigating to Plays...
+[STEP 2] Creating a new play...
+[OK] Filled titles: Test Play 1768291856
+[OK] Filled slug: test-play-1768291856
+[OK] Created test image: C:\Users\user\AppData\Local\Temp\test_play_1768291856.png
+[OK] Uploaded cover image
+[OK] Filled all body content editors
+[OK] Clicked Create button
+
+[STEP 3] Verifying play creation...
+[OK] Play 'Test Play 1768291856' found in the list.
+
+[STEP 4] Deleting the play 'Test Play 1768291856'...
+Waiting for confirmation modal...
+
+[STEP 5] Verifying deletion...
+[OK] Empty state visible.
+[SUCCESS] Play 'Test Play 1768291856' is definitively gone.

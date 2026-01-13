@@ -2,12 +2,12 @@
 set TEST_FILE=%1
 
 if "%TEST_FILE%"=="" (
-    echo Usage: run_test_report.bat [path_to_test_file]
-    exit /b 1
+    echo No test file specified. Running ALL tests...
+    pytest --alluredir=./allure-results
+) else (
+    echo Running tests in %TEST_FILE%...
+    pytest %TEST_FILE% --alluredir=./allure-results
 )
-
-echo Running tests in %TEST_FILE%...
-pytest %TEST_FILE% --alluredir=./allure-results
 
 if %ERRORLEVEL% NEQ 0 (
     echo Tests failed or encountered errors. Proceeding to generate report anyway...

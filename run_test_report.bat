@@ -4,6 +4,9 @@ set TEST_FILE=%1
 if "%TEST_FILE%"=="" (
     echo No test file specified. Running ALL tests...
     pytest --alluredir=./allure-results
+) else if /I "%TEST_FILE%"=="smoke" (
+    echo Running SMOKE tests...
+    pytest tests/test_smoke.py --alluredir=./allure-results
 ) else (
     echo Running tests in %TEST_FILE%...
     pytest %TEST_FILE% --alluredir=./allure-results

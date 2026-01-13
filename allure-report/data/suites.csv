@@ -1,19 +1,23 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
 "
-Comprehensive test to create a social link and then delete it.
-","17575","test_social_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_social_comprehensive","",""
-"
-Comprehensive test to edit an entry and then revert it.
-","9657","test_entries_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_entries_comprehensive","",""
-"
-Comprehensive test to create a play and then delete it.
-","30427","test_play_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_play_comprehensive","",""
+Comprehensive test to create news and then delete it.
+","30578","test_news_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_news_comprehensive","",""
 "
 Comprehensive test to add a video with all required fields filled.
 ","21436","test_add_video_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_video_comprehensive","",""
 "
+Smoke test: Log in and verify dashboard access.
+This relies on the 'auth_page' fixture in conftest.py which handles the login.
+","1228","test_login_smoke[chromium]","tests","2026-01-13","passed","2026-01-13","","test_smoke","",""
+"
+Comprehensive test to create a play and then delete it.
+","30427","test_play_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_play_comprehensive","",""
+"
+Comprehensive test to edit an entry and then revert it.
+","9657","test_entries_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_entries_comprehensive","",""
+"
 Comprehensive test to create a roadmap and then delete it.
 ","12444","test_roadmap_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_roadmap_comprehensive","",""
 "
-Comprehensive test to create news and then delete it.
-","30578","test_news_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_news_comprehensive","",""
+Comprehensive test to create a social link and then delete it.
+","17575","test_social_comprehensive[chromium]","tests","2026-01-13","passed","2026-01-13","","test_social_comprehensive","",""

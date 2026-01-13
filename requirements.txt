@@ -3,4 +3,6 @@ pytest
 pytest-playwright
 pytest-html
 allure-pytest
+allure-combine
 python-dotenv
+requests

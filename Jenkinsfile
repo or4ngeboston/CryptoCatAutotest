@@ -22,7 +22,7 @@ pipeline {
                 -v "%WORKSPACE%":/workspace ^
                 -w /workspace ^
                 cryptocat-test ^
-                pytest --junitxml=results.xml --html=report.html --self-contained-html --alluredir=allure-results
+                bash -c "pytest --junitxml=results.xml --html=report.html --self-contained-html --alluredir=allure-results; allure generate allure-results -o allure-report --clean; allure-combine allure-report"
                 '''
             }
         }
@@ -30,7 +30,7 @@ pipeline {
         stage('Publish Results') {
             steps {
                 junit 'results.xml'
-                archiveArtifacts artifacts: 'results.xml, report.html, allure-results/**', allowEmptyArchive: true
+                archiveArtifacts artifacts: 'results.xml, report.html, allure-report/complete.html', allowEmptyArchive: true
             }
         }
     }

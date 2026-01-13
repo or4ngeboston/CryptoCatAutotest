@@ -14,11 +14,20 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 echo Generating Allure Report...
-call allure generate --single-file path/to/allure-results
+echo Generating Allure Report...
+call npx -y allure-commandline generate ./allure-results -o ./allure-report --clean
+if %ERRORLEVEL% NEQ 0 (
+    echo Allure generation failed!
+    exit /b 1
+)
 
 echo Combining to Single File...
 call allure-combine ./allure-report
+if %ERRORLEVEL% NEQ 0 (
+    echo Allure combine failed!
+    exit /b 1
+)
 
 echo.
-echo Report generated at: %CD%\allure-results\complete.html
+echo Report generated at: %CD%\allure-report\complete.html
 start allure-report\complete.html

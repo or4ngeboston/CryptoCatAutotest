@@ -8,4 +8,11 @@ WORKDIR /workspace
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+# Install Java (required for Allure) and Node.js (for allure-commandline)
+RUN apt-get update && apt-get install -y default-jre npm && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Allure Commandline
+RUN npm install -g allure-commandline
+
 # Browsers are pre-installed in this image

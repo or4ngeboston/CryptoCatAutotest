@@ -26,7 +26,7 @@ def test_entries_comprehensive(auth_page: Page):
     search_input.press("Enter")
     auth_page.wait_for_timeout(2000)
     
-    entry_row = auth_page.locator("table tr").filter(has_text="Main page Title").first
+    entry_row = auth_page.locator("table.fi-ta-table tr").filter(has_text="Main page Title").first
     expect(entry_row).to_be_visible()
     
     # 4. Click row to edit
@@ -82,7 +82,7 @@ def test_entries_comprehensive(auth_page: Page):
     # Instead of verifying in table (which might not show the body), we open the item to verify.
     print("\n[STEP 3] complying verification and reverting changes...")
     
-    updated_row = auth_page.locator("table tr").filter(has_text="Main page Title").first
+    updated_row = auth_page.locator("table.fi-ta-table tr").filter(has_text="Main page Title").first
     updated_row.click()
     
     body_field = auth_page.locator('textarea[id$=".body"]').first
@@ -118,7 +118,7 @@ def test_entries_comprehensive(auth_page: Page):
     search_input.press("Enter")
     auth_page.wait_for_timeout(1500)
     
-    reverted_row = auth_page.locator("table tr").filter(has_text="Main page Title").first
+    reverted_row = auth_page.locator("table.fi-ta-table tr").filter(has_text="Main page Title").first
     reverted_row.click()
     
     body_field = auth_page.locator('textarea[id$=".body"]').first

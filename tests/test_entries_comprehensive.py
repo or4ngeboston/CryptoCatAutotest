@@ -69,7 +69,7 @@ def test_entries_comprehensive(auth_page: Page):
     auth_page.goto("https://admin.cryptocat.ssd.uz/admin/entries")
 
     # Wait for table to appear again
-    auth_page.wait_for_selector("table.fi-ta-table, table", state="visible", timeout=10000)
+    auth_page.wait_for_selector("table.fi-ta-table", state="visible", timeout=10000)
 
     # Search again (very important!)
     print("[STEP] Searching again after save...")
@@ -111,7 +111,7 @@ def test_entries_comprehensive(auth_page: Page):
     print("[STEP] Verifying revert by going back to list and checking form...")
     auth_page.goto("https://admin.cryptocat.ssd.uz/admin/entries")
     
-    auth_page.wait_for_selector("table.fi-ta-table, table", state="visible", timeout=10000)
+    auth_page.wait_for_selector("table.fi-ta-table", state="visible", timeout=10000)
     
     search_input = auth_page.locator("input[placeholder*='Search']").first
     search_input.fill("Main page Title")

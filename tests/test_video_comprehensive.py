@@ -128,7 +128,7 @@ def test_add_video_comprehensive(auth_page: Page):
         delete_btn.click()
     else:
         # Delete from table row
-        video_row = auth_page.locator("table tr").filter(has_text=test_video_title).first
+        video_row = auth_page.locator("table.fi-ta-table tr").filter(has_text=test_video_title).first
         delete_btn = video_row.locator("button, a").filter(has_text="Delete").first
         expect(delete_btn).to_be_visible()
         delete_btn.click()
@@ -161,7 +161,7 @@ def test_add_video_comprehensive(auth_page: Page):
     if empty_state.count() > 0:
         print("[OK] Empty state visible.")
     else:
-        expect(auth_page.locator("table")).not_to_contain_text(test_video_title)
+        expect(auth_page.locator("table.fi-ta-table")).not_to_contain_text(test_video_title)
     
     print(f"[SUCCESS] Video '{test_video_title}' is definitively gone.")
     

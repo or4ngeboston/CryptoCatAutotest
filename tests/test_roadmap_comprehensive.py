@@ -60,7 +60,7 @@ def test_roadmap_comprehensive(auth_page: Page):
     auth_page.wait_for_timeout(2000)
     
     # Verify it appears in the table
-    roadmap_row = auth_page.locator("table tr").filter(has_text=test_date).first
+    roadmap_row = auth_page.locator("table.fi-ta-table tr").filter(has_text=test_date).first
     expect(roadmap_row).to_be_visible()
     print(f"[OK] Roadmap '{test_date}' found in the list.")
     
@@ -97,6 +97,6 @@ def test_roadmap_comprehensive(auth_page: Page):
         print("[OK] Empty state visible.")
     else:
         # Check that the table does not contain the test date
-        expect(auth_page.locator("table")).not_to_contain_text(test_date)
+        expect(auth_page.locator("table.fi-ta-table")).not_to_contain_text(test_date)
     
     print(f"[SUCCESS] Roadmap '{test_date}' is definitively gone.")

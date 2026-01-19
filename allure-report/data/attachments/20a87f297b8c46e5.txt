@@ -1,0 +1,17 @@
+[OK] Filled title: Test Video 1768810786
+[OK] Created test video file: C:\Users\user\AppData\Local\Temp\test_video_1768810786.mp4
+[OK] Uploaded test video file
+Screenshot saved: before_submit.png
+Waiting for upload to complete...
+[OK] Clicked Create button
+[OK] Video 'Test Video 1768810786' was created successfully!
+[OK] Redirected to edit page for video 'Test Video 1768810786'
+
+[STEP 4] Deleting the video 'Test Video 1768810786'...
+Waiting for confirmation modal...
+[OK] Confirmed deletion
+
+[STEP 5] Verifying deletion...
+[OK] Empty state visible.
+[SUCCESS] Video 'Test Video 1768810786' is definitively gone.
+[OK] Cleaned up test video file

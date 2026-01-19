@@ -102,7 +102,7 @@ def test_news_comprehensive(auth_page: Page):
     search_input.press("Enter")
     auth_page.wait_for_timeout(2000)
     
-    news_row = auth_page.locator("table tr").filter(has_text=test_title).first
+    news_row = auth_page.locator("table.fi-ta-table tr").filter(has_text=test_title).first
     expect(news_row).to_be_visible()
     print(f"[OK] News '{test_title}' found in the list.")
     
@@ -132,7 +132,7 @@ def test_news_comprehensive(auth_page: Page):
     if empty_state.count() > 0:
         print("[OK] Empty state visible.")
     else:
-        expect(auth_page.locator("table")).not_to_contain_text(test_title)
+        expect(auth_page.locator("table.fi-ta-table")).not_to_contain_text(test_title)
     
     print(f"[SUCCESS] News '{test_title}' is definitively gone.")
     

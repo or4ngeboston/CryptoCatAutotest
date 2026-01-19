@@ -32,8 +32,7 @@ def test_login_smoke(auth_page: Page):
     sidebar = auth_page.locator(".fi-sidebar-nav")
     expect(sidebar).to_be_visible(timeout=10000)
     
-    import re
-    # 3. Verify title (relax check to 'Dashboard' or 'Admin' as seen in logs)
-    expect(auth_page).to_have_title(re.compile(r"Dashboard|Admin|Cryptocat"), timeout=5000)
+    # 3. Verify title
+    expect(auth_page).to_have_title("Dashboard - Admin", timeout=5000)
     
     print("\n[SUCCESS] Smoke test passed: Logged in and verified Dashboard.")

@@ -14,7 +14,7 @@ def test_entries_comprehensive(auth_page: Page):
     
     # 2. Navigate to Entries tab
     print("\n[STEP 1] Navigating to Entries...")
-    entries_link = auth_page.locator("a.fi-sidebar-item-button").filter(has_text="Entries")
+    entries_link = auth_page.locator("a.fi-sidebar-item-button").filter(has_text="Entries").first
     entries_link.click()
     auth_page.wait_for_url("**/admin/entries**")
     
@@ -69,7 +69,8 @@ def test_entries_comprehensive(auth_page: Page):
     auth_page.goto("https://admin.cryptocat.ssd.uz/admin/entries")
 
     # Wait for table to appear again
-    auth_page.wait_for_selector("table.fi-ta-table", state="visible", timeout=10000)
+    auth_page.wait_for_selector("table.fi-ta-table", state="visible", timeout=15000)
+    auth_page.wait_for_load_state("networkidle")
 
     # Search again (very important!)
     print("[STEP] Searching again after save...")
